@@ -2,11 +2,15 @@ type pokemonProps = {
 	name: string;
 	imgSrc?: string;
 };
-function PokemonCard({ name, imgSrc }: pokemonProps) {
+function PokemonCard({ pokemon }: { pokemon: pokemonProps }) {
 	return (
 		<figure>
-			<img src={imgSrc} alt={name} />) : (<p>???</p>
-			<figcaption>{name}</figcaption>
+			{pokemon.imgSrc ? (
+				<img src={pokemon.imgSrc} alt={pokemon.name} />
+			) : (
+				<p>???</p>
+			)}
+			<figcaption>{pokemon.name}</figcaption>
 		</figure>
 	);
 }
