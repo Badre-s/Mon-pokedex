@@ -16,15 +16,21 @@ const NavBar = ({
 	setPokemonIndex,
 	pokemonList,
 }: NavBarProps) => {
+	const handlePokemonSelect = (index: number) => {
+		setPokemonIndex(index);
+		if (pokemonList[index].name === "pikachu") {
+			alert("pika pikachu !!!");
+		}
+	};
+
 	return (
 		<section>
 			<div>
 				<PokemonCard pokemon={pokemonList[pokemonIndex]} />
 				{pokemonList.map((pokemon, index) => (
 					<span key={pokemon.name}>
-						<button type="button" onClick={() => setPokemonIndex(index)}>
-							{" "}
-							{pokemon.name}{" "}
+						<button type="button" onClick={() => handlePokemonSelect(index)}>
+							{pokemon.name}
 						</button>
 					</span>
 				))}

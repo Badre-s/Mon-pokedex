@@ -1,10 +1,13 @@
 import { useState } from "react";
+import { useEffect } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar";
 
 function App() {
 	const [pokemonIndex, setPokemonIndex] = useState(0);
-
+	useEffect(() => {
+		alert("hello pokemon trainer :)");
+	}, []);
 	const pokemonList = [
 		{
 			name: "bulbasaur",
