@@ -23,8 +23,7 @@ const NavBar = ({
 				{pokemonList.map((pokemon, index) => (
 					<span key={pokemon.name}>
 						<button type="button" onClick={() => setPokemonIndex(index)}>
-							{" "}
-							{pokemon.name}{" "}
+							{pokemon.name}
 						</button>
 					</span>
 				))}
